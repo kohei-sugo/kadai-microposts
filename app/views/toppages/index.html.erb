@@ -8,6 +8,12 @@
         <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
       <% end %>
     </aside>
+    <div>
+      <%= link_to favoritelist_path do %>
+        <span class="btn btn-primary btn-info"><span class="glyphicon glyphicon-heart"></span> Favorite List</span>
+      <% end %>
+    </div>
+    <hr style="border:1px solid">
     <div class="col-xs-8">
       <%= render 'microposts/microposts', microposts: @microposts %>
     </div>

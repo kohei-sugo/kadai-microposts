@@ -11,10 +11,17 @@
         <div>
           <p><%= micropost.content %></p>
         </div>
-        <div>
+        <div style="display:inline-flex">
+          <%= render 'favorites/favorite_button', micropost: micropost %>
           <% if current_user == micropost.user %>
             <%= link_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-xs' %>
           <% end %>
+        </div>
+        <div>
+          <%# if Favorite.find_by(user_id: @current_user.id, micropost_id: micropost.user_id) %>
+          <%# else %>
+            <%#= link_to "Favorite", favorites_url(@micropost.user_id), method: :post, class: "btn btn-info btn-xs" %>
+          <%# end %>
         </div>
       </div>
     </li>
